@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default Goal = ({ item }) => {
+export default Goal = ({ item, onDelete }) => {
   return (
-    // wrap in View because View has more styling options then Text
-    <View style={styles.item}>
-      <Text>{item}</Text>
-    </View>
+    <TouchableOpacity onPress={() => onDelete(item.key)}>
+      <View style={styles.item}>
+        <Text>{item.value}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
