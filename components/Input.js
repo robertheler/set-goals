@@ -18,14 +18,21 @@ export default Input = ({ addGoal, isVisible, onCancel }) => {
           onChangeText={goalInputHandler}
           value={goal}
         />
+        <View style={styles.buttonDirection}>
         <Button title="Cancel" color="red" onPress={onCancel}/>
         <Button title="Add" onPress={addGoalHnadler} />
+        </View>
       </View>
     </Modal>
   );
 };
 
 const styles = StyleSheet.create({
+  buttonDirection: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "80%"
+  },
   inputContainer: {
     flex: 0.5,
     marginTop: 300,
